@@ -1,5 +1,6 @@
 extends Control
 
+@onready var escolhamodo : Window = $Window
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,11 @@ func _on_button_pressed() -> void:
 	pass 
 
 
+func _on_button_1_pressed() -> void:
+	escolhamodo.show()
+	pass # Replace with function body.
+
+
 func _on_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/MenuManual.tscn")
 	pass # Replace with function body.
@@ -21,4 +27,9 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/MenuCartas.tscn")
+	pass # Replace with function body.
+
+
+func _on_window_close_requested() -> void:
+	escolhamodo.hide()
 	pass # Replace with function body.

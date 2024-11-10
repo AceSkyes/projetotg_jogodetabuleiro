@@ -22,6 +22,7 @@ grow_vertical = 2
 color = Color(0.431373, 0.396078, 0.658824, 1)
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_right = 808.0
 offset_bottom = 608.0
 scale = Vector2(0.3, 0.3)
