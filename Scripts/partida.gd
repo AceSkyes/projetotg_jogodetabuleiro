@@ -24,6 +24,10 @@ func _on_dado_dado_rolado(ultimoval: Variant) -> void:
 	var mover = create_tween()
 	print(ultimoval)
 	while ultimoval != 0:
-		mover.tween_property(j1, "position", campos[movp1].position, 0.5)
-		movp1 += 1
-		ultimoval -=1
+		if movp1 <= maxmov:
+			mover.tween_property(j1, "position", campos[movp1].position, 0.5)
+			movp1 += 1
+			ultimoval -=1
+		else:
+			mover.tween_property(j1, "position", campos[maxmov].position, 0.5)
+			ultimoval = 0 
