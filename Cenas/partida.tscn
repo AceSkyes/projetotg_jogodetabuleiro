@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://oxb4qxyo25t1"]
+[gd_scene load_steps=6 format=3 uid="uid://oxb4qxyo25t1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyx0e8u2huwk" path="res://Recursos/Imagens/base_jogo-1.png" id="1_s5v0m"]
 [ext_resource type="Script" path="res://Scripts/partida.gd" id="1_x8d04"]
 [ext_resource type="PackedScene" uid="uid://hq0k2g6kbps4" path="res://Cenas/jogadorazul.tscn" id="2_g3eys"]
 [ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
+[ext_resource type="PackedScene" uid="uid://bra2eh45egvdh" path="res://Cenas/jogadorvermelho.tscn" id="4_rvxjp"]
 
 [node name="Partida" type="Node2D" node_paths=PackedStringArray("campos")]
 script = ExtResource("1_x8d04")
@@ -21,7 +22,13 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_s5v0m")
 
 [node name="Node2D" parent="." instance=ExtResource("2_g3eys")]
+z_index = 2
 position = Vector2(571, 586)
+scale = Vector2(0.5, 0.5)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_rvxjp")]
+z_index = 2
+position = Vector2(1040, 262)
 scale = Vector2(0.5, 0.5)
 
 [node name="BaseAzul" type="Marker2D" parent="."]

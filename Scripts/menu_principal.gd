@@ -16,7 +16,8 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_1_pressed() -> void:
-	escolhamodo.show()
+	#escolhamodo.show()
+	get_tree().change_scene_to_file("res://Cenas/partida.tscn")
 	pass # Replace with function body.
 
 

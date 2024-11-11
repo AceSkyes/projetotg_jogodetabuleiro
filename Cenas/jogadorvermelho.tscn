@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bra2eh45egvdh"]
+
+[ext_resource type="Script" path="res://Scripts/jogadorazul.gd" id="1_y744j"]
+[ext_resource type="Texture2D" uid="uid://cbwm2iv2k4ni8" path="res://Recursos/Imagens/jogador2.png" id="2_lpdvm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_y744j")
+
+[node name="Jogadorazul" type="Sprite2D" parent="."]
+texture = ExtResource("2_lpdvm")
