@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://oxb4qxyo25t1"]
+[gd_scene load_steps=5 format=3 uid="uid://oxb4qxyo25t1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyx0e8u2huwk" path="res://Recursos/Imagens/base_jogo-1.png" id="1_s5v0m"]
 [ext_resource type="Script" path="res://Scripts/partida.gd" id="1_x8d04"]
 [ext_resource type="PackedScene" uid="uid://hq0k2g6kbps4" path="res://Cenas/jogadorazul.tscn" id="2_g3eys"]
+[ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
 
 [node name="Partida" type="Node2D" node_paths=PackedStringArray("campos")]
 script = ExtResource("1_x8d04")
@@ -97,3 +98,9 @@ position = Vector2(889, 148)
 
 [node name="BaseVermelha" type="Marker2D" parent="."]
 position = Vector2(1108, 226)
+
+[node name="Dado" parent="." instance=ExtResource("4_psekw")]
+position = Vector2(259, 637)
+scale = Vector2(0.75, 0.75)
+
+[connection signal="dado_rolado" from="Dado" to="." method="_on_dado_dado_rolado"]
