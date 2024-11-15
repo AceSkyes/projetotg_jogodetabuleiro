@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
 [ext_resource type="PackedScene" uid="uid://bra2eh45egvdh" path="res://Cenas/jogadorvermelho.tscn" id="4_rvxjp"]
 
-[node name="Partida" type="Node2D" node_paths=PackedStringArray("campos")]
+[node name="Partida" type="Node2D" node_paths=PackedStringArray("campos", "peças1", "peças2")]
 script = ExtResource("1_x8d04")
 campos = [NodePath("BaseAzul"), NodePath("c1"), NodePath("c2"), NodePath("c3"), NodePath("c4"), NodePath("c5"), NodePath("c6"), NodePath("c7"), NodePath("c8"), NodePath("c9"), NodePath("c10"), NodePath("c11"), NodePath("c12"), NodePath("c13"), NodePath("c14"), NodePath("c15"), NodePath("c16"), NodePath("c17"), NodePath("c18"), NodePath("c19"), NodePath("c20"), NodePath("c21"), NodePath("c22"), NodePath("c23"), NodePath("BaseVermelha")]
+"peças1" = [NodePath("Node2D")]
+"peças2" = [NodePath("Node2D2")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1600.0
@@ -23,49 +25,64 @@ texture = ExtResource("1_s5v0m")
 
 [node name="Node2D" parent="." instance=ExtResource("2_g3eys")]
 z_index = 2
-position = Vector2(571, 586)
+position = Vector2(483, 496)
 scale = Vector2(0.5, 0.5)
 
 [node name="Node2D2" parent="." instance=ExtResource("4_rvxjp")]
 z_index = 2
-position = Vector2(1040, 262)
+position = Vector2(1105, 403)
 scale = Vector2(0.5, 0.5)
 
 [node name="BaseAzul" type="Marker2D" parent="."]
-position = Vector2(490, 638)
+position = Vector2(414, 592)
+
+[node name="BaseAzul2" type="Marker2D" parent="."]
+position = Vector2(484, 590)
+
+[node name="BaseAzul3" type="Marker2D" parent="."]
+position = Vector2(557, 592)
+
+[node name="BaseAzul4" type="Marker2D" parent="."]
+position = Vector2(413, 661)
+
+[node name="BaseAzul5" type="Marker2D" parent="."]
+position = Vector2(482, 665)
+
+[node name="BaseAzul6" type="Marker2D" parent="."]
+position = Vector2(557, 669)
 
 [node name="c1" type="Marker2D" parent="."]
-position = Vector2(693, 737)
+position = Vector2(704, 736)
 
 [node name="c2" type="Marker2D" parent="."]
-position = Vector2(826, 737)
+position = Vector2(832, 736)
 
 [node name="c3" type="Marker2D" parent="."]
-position = Vector2(970, 739)
+position = Vector2(976, 736)
 
 [node name="c4" type="Marker2D" parent="."]
-position = Vector2(1123, 739)
+position = Vector2(1120, 736)
 
 [node name="c5" type="Marker2D" parent="."]
-position = Vector2(1263, 739)
+position = Vector2(1272, 744)
 
 [node name="c6" type="Marker2D" parent="."]
-position = Vector2(1394, 660)
+position = Vector2(1400, 664)
 
 [node name="c7" type="Marker2D" parent="."]
-position = Vector2(1265, 588)
+position = Vector2(1272, 592)
 
 [node name="c8" type="Marker2D" parent="."]
-position = Vector2(1125, 590)
+position = Vector2(1128, 592)
 
 [node name="c9" type="Marker2D" parent="."]
-position = Vector2(984, 593)
+position = Vector2(992, 592)
 
 [node name="c10" type="Marker2D" parent="."]
-position = Vector2(840, 596)
+position = Vector2(840, 592)
 
 [node name="c11" type="Marker2D" parent="."]
-position = Vector2(703, 592)
+position = Vector2(704, 592)
 
 [node name="c12" type="Marker2D" parent="."]
 position = Vector2(795, 446)
@@ -104,7 +121,22 @@ position = Vector2(764, 148)
 position = Vector2(889, 148)
 
 [node name="BaseVermelha" type="Marker2D" parent="."]
-position = Vector2(1108, 226)
+position = Vector2(1158, 189)
+
+[node name="BaseVermelha2" type="Marker2D" parent="."]
+position = Vector2(1101, 189)
+
+[node name="BaseVermelha3" type="Marker2D" parent="."]
+position = Vector2(1040, 187)
+
+[node name="BaseVermelha4" type="Marker2D" parent="."]
+position = Vector2(1163, 251)
+
+[node name="BaseVermelha5" type="Marker2D" parent="."]
+position = Vector2(1100, 256)
+
+[node name="BaseVermelha6" type="Marker2D" parent="."]
+position = Vector2(1047, 244)
 
 [node name="Dado" parent="." instance=ExtResource("4_psekw")]
 position = Vector2(259, 637)
