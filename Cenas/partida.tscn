@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://oxb4qxyo25t1"]
+[gd_scene load_steps=7 format=3 uid="uid://oxb4qxyo25t1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyx0e8u2huwk" path="res://Recursos/Imagens/base_jogo-1.png" id="1_s5v0m"]
 [ext_resource type="Script" path="res://Scripts/partida.gd" id="1_x8d04"]
 [ext_resource type="PackedScene" uid="uid://hq0k2g6kbps4" path="res://Cenas/jogadorazul.tscn" id="2_g3eys"]
 [ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
 [ext_resource type="PackedScene" uid="uid://bra2eh45egvdh" path="res://Cenas/jogadorvermelho.tscn" id="4_rvxjp"]
+[ext_resource type="Texture2D" uid="uid://8q1shmw764h5" path="res://Recursos/Imagens/seta.png" id="6_w0fdj"]
 
 [node name="Partida" type="Node2D" node_paths=PackedStringArray("campos", "peças1", "peças2")]
 script = ExtResource("1_x8d04")
@@ -15,131 +16,178 @@ campos = [NodePath("BaseAzul"), NodePath("c1"), NodePath("c2"), NodePath("c3"), 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1600.0
 offset_bottom = 900.0
-color = Color(0.431373, 0.396078, 0.658824, 1)
+color = Color(0.198405, 0.200274, 0.250652, 1)
 metadata/_edit_lock_ = true
 
 [node name="Mapa" type="Sprite2D" parent="."]
-position = Vector2(800, 450)
+position = Vector2(800, 392)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_s5v0m")
 
 [node name="Node2D" parent="." instance=ExtResource("2_g3eys")]
 z_index = 2
-position = Vector2(483, 496)
+position = Vector2(483, 438)
 scale = Vector2(0.5, 0.5)
 
 [node name="Node2D2" parent="." instance=ExtResource("4_rvxjp")]
 z_index = 2
-position = Vector2(1105, 403)
+position = Vector2(1105, 345)
 scale = Vector2(0.5, 0.5)
 
 [node name="BaseAzul" type="Marker2D" parent="."]
-position = Vector2(414, 592)
+position = Vector2(414, 534)
 
 [node name="BaseAzul2" type="Marker2D" parent="."]
-position = Vector2(484, 590)
+position = Vector2(484, 532)
 
 [node name="BaseAzul3" type="Marker2D" parent="."]
-position = Vector2(557, 592)
+position = Vector2(557, 534)
 
 [node name="BaseAzul4" type="Marker2D" parent="."]
-position = Vector2(413, 661)
+position = Vector2(413, 603)
 
 [node name="BaseAzul5" type="Marker2D" parent="."]
-position = Vector2(482, 665)
+position = Vector2(482, 607)
 
 [node name="BaseAzul6" type="Marker2D" parent="."]
-position = Vector2(557, 669)
+position = Vector2(557, 611)
 
 [node name="c1" type="Marker2D" parent="."]
-position = Vector2(704, 736)
+position = Vector2(704, 678)
 
 [node name="c2" type="Marker2D" parent="."]
-position = Vector2(832, 736)
+position = Vector2(832, 678)
 
 [node name="c3" type="Marker2D" parent="."]
-position = Vector2(976, 736)
+position = Vector2(976, 678)
 
 [node name="c4" type="Marker2D" parent="."]
-position = Vector2(1120, 736)
+position = Vector2(1120, 678)
 
 [node name="c5" type="Marker2D" parent="."]
-position = Vector2(1272, 744)
+position = Vector2(1272, 686)
 
 [node name="c6" type="Marker2D" parent="."]
-position = Vector2(1400, 664)
+position = Vector2(1400, 606)
 
 [node name="c7" type="Marker2D" parent="."]
-position = Vector2(1272, 592)
+position = Vector2(1272, 534)
 
 [node name="c8" type="Marker2D" parent="."]
-position = Vector2(1128, 592)
+position = Vector2(1128, 534)
 
 [node name="c9" type="Marker2D" parent="."]
-position = Vector2(992, 592)
+position = Vector2(992, 534)
 
 [node name="c10" type="Marker2D" parent="."]
-position = Vector2(840, 592)
+position = Vector2(840, 534)
 
 [node name="c11" type="Marker2D" parent="."]
-position = Vector2(704, 592)
+position = Vector2(704, 534)
 
 [node name="c12" type="Marker2D" parent="."]
-position = Vector2(795, 446)
+position = Vector2(795, 388)
 
 [node name="c13" type="Marker2D" parent="."]
-position = Vector2(906, 295)
+position = Vector2(906, 237)
 
 [node name="c14" type="Marker2D" parent="."]
-position = Vector2(763, 293)
+position = Vector2(763, 235)
 
 [node name="c15" type="Marker2D" parent="."]
-position = Vector2(626, 293)
+position = Vector2(626, 235)
 
 [node name="c16" type="Marker2D" parent="."]
-position = Vector2(494, 293)
+position = Vector2(494, 235)
 
 [node name="c17" type="Marker2D" parent="."]
-position = Vector2(351, 296)
+position = Vector2(351, 238)
 
 [node name="c18" type="Marker2D" parent="."]
-position = Vector2(221, 226)
+position = Vector2(221, 168)
 
 [node name="c19" type="Marker2D" parent="."]
-position = Vector2(361, 150)
+position = Vector2(361, 92)
 
 [node name="c20" type="Marker2D" parent="."]
-position = Vector2(496, 148)
+position = Vector2(496, 90)
 
 [node name="c21" type="Marker2D" parent="."]
-position = Vector2(630, 144)
+position = Vector2(630, 86)
 
 [node name="c22" type="Marker2D" parent="."]
-position = Vector2(764, 148)
+position = Vector2(764, 90)
 
 [node name="c23" type="Marker2D" parent="."]
-position = Vector2(889, 148)
+position = Vector2(889, 90)
 
 [node name="BaseVermelha" type="Marker2D" parent="."]
-position = Vector2(1158, 189)
+position = Vector2(1158, 131)
 
 [node name="BaseVermelha2" type="Marker2D" parent="."]
-position = Vector2(1101, 189)
+position = Vector2(1101, 131)
 
 [node name="BaseVermelha3" type="Marker2D" parent="."]
-position = Vector2(1040, 187)
+position = Vector2(1040, 129)
 
 [node name="BaseVermelha4" type="Marker2D" parent="."]
-position = Vector2(1163, 251)
+position = Vector2(1163, 193)
 
 [node name="BaseVermelha5" type="Marker2D" parent="."]
-position = Vector2(1100, 256)
+position = Vector2(1100, 198)
 
 [node name="BaseVermelha6" type="Marker2D" parent="."]
-position = Vector2(1047, 244)
+position = Vector2(1047, 186)
 
 [node name="Dado" parent="." instance=ExtResource("4_psekw")]
-position = Vector2(259, 637)
+position = Vector2(259, 579)
 scale = Vector2(0.75, 0.75)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -121.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.518554, 0.540302, 0.601051, 1)
+metadata/_edit_lock_ = true
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -40.5
+offset_right = 300.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Rolar" type="Button" parent="CanvasLayer/ColorRect/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "Lançar dado"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_top = 19.0
+offset_right = 800.0
+offset_bottom = 619.0
+scale = Vector2(0.15, 0.15)
+toggle_mode = true
+texture_normal = ExtResource("6_w0fdj")
+texture_pressed = ExtResource("6_w0fdj")
+
 [connection signal="dado_rolado" from="Dado" to="." method="_on_dado_dado_rolado"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/BoxContainer/Rolar" to="Dado" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]

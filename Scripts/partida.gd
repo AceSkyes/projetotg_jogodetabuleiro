@@ -4,6 +4,7 @@ extends Node2D
 @onready var j2 : Node2D = $Node2D2
 @onready var c1 : Marker2D = $c1
 @onready var dado := $Dado
+@onready var botaorolar = $CanvasLayer/ColorRect/BoxContainer/Rolar
 @export var campos : Array[Node]
 @export var peças1 : Array[Node]
 @export var peças2 : Array[Node]
@@ -34,7 +35,7 @@ func _on_dado_dado_rolado(ultimoval: Variant) -> void:
 		
 	
 func movimentop1(ultimoval) -> void:
-	ultimoval = 6
+	#ultimoval = 6
 	var mover = create_tween()
 	while ultimoval != 0:
 		if movp1 <= maxmov:
@@ -56,11 +57,12 @@ func movimentop1(ultimoval) -> void:
 	if movp1 >= maxmov:
 		print("Jogador 1 Venceu")
 		get_tree().change_scene_to_file("res://Cenas/MenuPrincipal.tscn")
+	botaorolar.disabled = false
 
 
 func movimentop2(ultimoval) -> void:
 	var mover = create_tween()
-	ultimoval = 6
+	#ultimoval = 6
 	while ultimoval != 0:
 		if movp2 >= minmov:
 			mover.tween_property(j2, "position", campos[movp2].position, 0.5)
@@ -81,3 +83,10 @@ func movimentop2(ultimoval) -> void:
 	if movp2 <= minmov:
 		print("jogador 2 Venceu")
 		get_tree().change_scene_to_file("res://Cenas/MenuPrincipal.tscn")
+	botaorolar.disabled = false
+	
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/MenuPrincipal.tscn")
+	pass 

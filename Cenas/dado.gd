@@ -2,6 +2,8 @@ extends Sprite2D
 
 @onready var rolar : AnimationPlayer = $AnimationPlayer
 @onready var timer : Timer = $Timer
+@onready var botaorolar = $"../CanvasLayer/ColorRect/BoxContainer/Rolar"
+
 var ultimoval
 signal dado_rolado(ultimoval)
 
@@ -11,11 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		rolar.play("Rolagem")
-		timer.start()
 
 func _on_timer_timeout() -> void:
 	ultimoval = 	randi_range(1,6)
@@ -35,3 +32,9 @@ func _on_timer_timeout() -> void:
 		_:
 			print("programador burro")
 	emit_signal("dado_rolado", ultimoval)
+
+
+func _on_button_pressed() -> void:
+	botaorolar.disabled = true
+	rolar.play("Rolagem")
+	timer.start()

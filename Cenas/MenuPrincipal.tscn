@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://boogr4e46rd56"]
+[gd_scene load_steps=4 format=3 uid="uid://boogr4e46rd56"]
 
 [ext_resource type="Script" path="res://Scripts/menu_principal.gd" id="1_huftu"]
 [ext_resource type="Texture2D" uid="uid://8q1shmw764h5" path="res://Recursos/Imagens/seta.png" id="2_k36qo"]
+[ext_resource type="Texture2D" uid="uid://bttb0sst3lkwd" path="res://Recursos/Imagens/Imagens Finais/logo jogo_cd2.png" id="3_0agfv"]
 
 [node name="Base" type="Control"]
 layout_mode = 3
@@ -20,21 +21,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.431309, 0.397371, 0.659686, 1)
+color = Color(0.183907, 0.201257, 0.427602, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = -157.0
-offset_right = 292.0
-offset_bottom = 337.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -380.0
+offset_right = 280.0
+offset_bottom = -70.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="Button" type="Button" parent="VBoxContainer"]
@@ -93,19 +94,14 @@ scale = Vector2(0.3, 0.3)
 icon = ExtResource("2_k36qo")
 flat = true
 
-[node name="Window" type="Window" parent="."]
-title = "Escolha o Modo"
-initial_position = 2
-size = Vector2i(1000, 450)
-visible = false
-transient = true
-exclusive = true
-unresizable = true
-popup_window = true
-mouse_passthrough = true
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(800, 260)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0agfv")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
