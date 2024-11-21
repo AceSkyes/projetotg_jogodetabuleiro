@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bcepyh71cd44p"]
 
 [ext_resource type="Texture2D" uid="uid://bdolqgcn375sm" path="res://Recursos/Imagens/dado.png" id="1_q8uet"]
-[ext_resource type="Script" path="res://Cenas/dado.gd" id="2_hpwqb"]
+[ext_resource type="Script" path="res://Scripts/dado.gd" id="2_hpwqb"]
 
 [sub_resource type="Animation" id="Animation_fryib"]
 length = 0.001

@@ -154,7 +154,7 @@ offset_top = -121.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.518554, 0.540302, 0.601051, 1)
+color = Color(0.517647, 0.541176, 0.6, 0)
 metadata/_edit_lock_ = true
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/ColorRect"]
