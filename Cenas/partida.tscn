@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oxb4qxyo25t1"]
+[gd_scene load_steps=10 format=3 uid="uid://oxb4qxyo25t1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyx0e8u2huwk" path="res://Recursos/Imagens/base_jogo-1.png" id="1_s5v0m"]
 [ext_resource type="Script" path="res://Scripts/partida.gd" id="1_x8d04"]
@@ -6,7 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cnnpn5e2w37it" path="res://Cenas/escolhas.tscn" id="3_00vpo"]
 [ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
 [ext_resource type="PackedScene" uid="uid://bra2eh45egvdh" path="res://Cenas/jogadorvermelho.tscn" id="4_rvxjp"]
+[ext_resource type="LabelSettings" uid="uid://dlaf74sd03ixp" path="res://Recursos/new_label_settings_1.tres" id="6_jrjde"]
 [ext_resource type="Texture2D" uid="uid://8q1shmw764h5" path="res://Recursos/Imagens/seta.png" id="6_w0fdj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vg46x"]
+font_size = 90
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Partida" type="Node2D" node_paths=PackedStringArray("campos", "peças1", "peças2", "camposfinaisA", "camposfinaisV", "baseazul", "basevermelha")]
 script = ExtResource("1_x8d04")
@@ -84,30 +90,132 @@ z_index = 2
 position = Vector2(72, 402)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador1_2" parent="jogadoresazuis" instance=ExtResource("2_g3eys")]
 z_index = 2
 position = Vector2(72, 493)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="jogador1_3" parent="jogadoresazuis" instance=ExtResource("2_g3eys")]
 z_index = 2
 position = Vector2(72, 583)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador1_4" parent="jogadoresazuis" instance=ExtResource("2_g3eys")]
 z_index = 2
 position = Vector2(72, 671)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="jogador1_5" parent="jogadoresazuis" instance=ExtResource("2_g3eys")]
 z_index = 2
 position = Vector2(72, 758)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador1_6" parent="jogadoresazuis" instance=ExtResource("2_g3eys")]
 z_index = 2
 position = Vector2(72, 841)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresazuis/jogador1_6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("6_jrjde")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="jogadoresvermelhos" type="Node2D" parent="."]
 
@@ -116,30 +224,132 @@ z_index = 2
 position = Vector2(1533, 400)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador2_2" parent="jogadoresvermelhos" instance=ExtResource("4_rvxjp")]
 z_index = 2
 position = Vector2(1533, 487)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="jogador2_3" parent="jogadoresvermelhos" instance=ExtResource("4_rvxjp")]
 z_index = 2
 position = Vector2(1533, 572)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador2_4" parent="jogadoresvermelhos" instance=ExtResource("4_rvxjp")]
 z_index = 2
 position = Vector2(1533, 660)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="jogador2_5" parent="jogadoresvermelhos" instance=ExtResource("4_rvxjp")]
 z_index = 2
 position = Vector2(1533, 745)
 scale = Vector2(0.4, 0.4)
 
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="jogador2_6" parent="jogadoresvermelhos" instance=ExtResource("4_rvxjp")]
 z_index = 2
 position = Vector2(1533, 833)
 scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="jogadoresvermelhos/jogador2_6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = SubResource("LabelSettings_vg46x")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="camposvitoriaazul" type="Node2D" parent="."]
 

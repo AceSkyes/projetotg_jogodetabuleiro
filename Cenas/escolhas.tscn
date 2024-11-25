@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnnpn5e2w37it"]
+[gd_scene load_steps=3 format=3 uid="uid://cnnpn5e2w37it"]
 
 [ext_resource type="Script" path="res://Scripts/escolhas.gd" id="1_l2c6n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrdjn"]
+font_size = 30
+shadow_size = 10
+shadow_color = Color(0.156863, 0.196078, 0.560784, 0.901961)
 
 [node name="Node" type="Node2D"]
 visible = false
@@ -23,12 +28,21 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="Escolhas"]
 layout_mode = 2
 theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Escolhas/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Escolhas/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escolha uma peça para mover"
+label_settings = SubResource("LabelSettings_mrdjn")
+horizontal_alignment = 1
 
 [node name="Escolha1" type="Button" parent="Escolhas/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
