@@ -28,7 +28,11 @@ func _ready() -> void:
 	pass 
 
 func _process(_delta: float) -> void:
-	pass
+	if contvitp1 == 6:
+		get_tree().change_scene_to_file("res://Cenas/fimdejogo.tscn")
+	if contvitp2 == 6:
+		get_tree().change_scene_to_file("res://Cenas/fimdejogo.tscn")
+
 
 func _on_dado_dado_rolado(ultimoval: Variant) -> void:
 	print(ultimoval)
