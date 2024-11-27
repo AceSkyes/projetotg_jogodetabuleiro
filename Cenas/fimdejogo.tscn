@@ -45,7 +45,7 @@ offset_top = 283.0
 offset_bottom = 393.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
-text = "Vitória do jogador: "
+text = "."
 horizontal_alignment = 1
 vertical_alignment = 1
 

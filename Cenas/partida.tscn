@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://oxb4qxyo25t1"]
+[gd_scene load_steps=11 format=3 uid="uid://oxb4qxyo25t1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyx0e8u2huwk" path="res://Recursos/Imagens/base_jogo-1.png" id="1_s5v0m"]
 [ext_resource type="Script" path="res://Scripts/partida.gd" id="1_x8d04"]
 [ext_resource type="PackedScene" uid="uid://hq0k2g6kbps4" path="res://Cenas/jogadorazul.tscn" id="2_g3eys"]
 [ext_resource type="PackedScene" uid="uid://cnnpn5e2w37it" path="res://Cenas/escolhas.tscn" id="3_00vpo"]
+[ext_resource type="Script" path="res://Scripts/turno.gd" id="4_ejoop"]
 [ext_resource type="PackedScene" uid="uid://bcepyh71cd44p" path="res://Cenas/dado.tscn" id="4_psekw"]
 [ext_resource type="PackedScene" uid="uid://bra2eh45egvdh" path="res://Cenas/jogadorvermelho.tscn" id="4_rvxjp"]
 [ext_resource type="LabelSettings" uid="uid://dlaf74sd03ixp" path="res://Recursos/new_label_settings_1.tres" id="6_jrjde"]
@@ -78,6 +79,19 @@ texture_pressed = ExtResource("6_w0fdj")
 [node name="Escolhas" parent="CanvasLayer" instance=ExtResource("3_00vpo")]
 
 [node name="Escolhas2" parent="CanvasLayer" instance=ExtResource("3_00vpo")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -256.0
+offset_right = 130.0
+offset_bottom = -146.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Turno : "
+horizontal_alignment = 1
+script = ExtResource("4_ejoop")
 
 [node name="Mapa" type="Sprite2D" parent="."]
 position = Vector2(800, 392)
