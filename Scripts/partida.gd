@@ -40,7 +40,7 @@ func _on_dado_dado_rolado(ultimoval: Variant) -> void:
 	$CanvasLayer/Escolhas.visible = true
 	
 func movimentop1(ultimoval,peça) -> void:
-	#ultimoval = 6
+	ultimoval = 6
 	$CanvasLayer/Escolhas.visible = false
 	var mover = create_tween()
 	while ultimoval != 0:
@@ -52,13 +52,42 @@ func movimentop1(ultimoval,peça) -> void:
 			mover.tween_property(peças1[peça], "position", campos[maxmov].position, 0.5)
 			ultimoval = 0 
 	await mover.finished
+#
+#
 	for i in range (0,6):
+		var checaposxy = Vector2(0,50) 
 		if peças1[peça].position == peças2[i].position:
-			print("confirma pos1")
 			var moverbase = create_tween()
-			moverbase.tween_property(peças2[i], "position", campos[maxmov].position, 0.5)
+			moverbase.tween_property(peças2[i], "position", basevermelha[i].position, 0.5)
 			movp2[i] = 23
 			await moverbase.finished
+			var ix2 = 0
+			while ix2 <= 5:
+				if (peças1[peça].position + checaposxy) == peças2[ix2].position:
+					var moverbase2 = create_tween()
+					moverbase2.tween_property(peças2[ix2], "position", basevermelha[ix2].position, 0.5)
+					movp2[ix2] = 23
+					await moverbase2.finished
+					checaposxy += Vector2(0,50)
+					ix2 = 0
+				else:
+					ix2 +=1
+			
+#
+#
+	var i2 = 0
+	while i2 < 6:
+			if peças1[peça].position == peças1[i2].position and peças1[peça] != peças1[i2]:
+				print(peças1[peça],peças1[i2])
+				var moverbaixo = create_tween()
+				moverbaixo.tween_property(peças1[peça], "position", peças1[peça].position + Vector2(0,50), 0.5)
+				await moverbaixo.finished 
+				i2 = 0
+			else:
+				i2+=1
+
+#
+#
 	contaturno +=1
 	print(peças1[peça].position)
 	if movp1[peça] > maxmov:
@@ -70,7 +99,7 @@ func movimentop1(ultimoval,peça) -> void:
 
 
 func movimentop2(ultimoval,peça) -> void:
-	#ultimoval = 6
+	ultimoval = 6
 	$CanvasLayer/Escolhas.visible = false
 	var mover = create_tween()
 	while ultimoval != 0:
@@ -82,13 +111,40 @@ func movimentop2(ultimoval,peça) -> void:
 			mover.tween_property(peças2[peça], "position", campos[minmov].position, 0.5)
 			ultimoval = 0 
 	await mover.finished
+#
+#
 	for i in range (0,6):
+		var checaposxy = Vector2(0,50) 
 		if peças1[i].position == peças2[peça].position:
-			print("confirma pos2")
 			var moverbase = create_tween()
 			moverbase.tween_property(peças1[i], "position", campos[minmov].position, 0.5)
 			movp1[i] = 1
 			await moverbase.finished
+			var ix2 = 0
+			while ix2 <= 5:
+				if (peças2[peça].position + checaposxy) == peças1[ix2].position:
+					var moverbase2 = create_tween()
+					moverbase2.tween_property(peças1[ix2], "position", baseazul[ix2].position, 0.5)
+					movp1[ix2] = 1
+					await moverbase2.finished
+					checaposxy += Vector2(0,50)
+					ix2 = 0
+				else:
+					ix2 +=1
+#
+#
+	var i2 = 0
+	while i2 < 6:
+		if peças2[peça].position == peças2[i2].position and peças2[peça] != peças2[i2]:
+			print(peças2[peça],peças2[i2])
+			var moverbaixo = create_tween()
+			moverbaixo.tween_property(peças2[peça], "position", peças2[i2].position + Vector2(0,50), 0.5)
+			await moverbaixo.finished 
+			i2 = 0
+		else:
+			i2+=1
+#
+#
 	contaturno +=1
 	print(peças2[peça].position)
 	if movp2[peça] < minmov:
