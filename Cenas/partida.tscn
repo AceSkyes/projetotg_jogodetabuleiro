@@ -77,6 +77,8 @@ texture_pressed = ExtResource("6_w0fdj")
 
 [node name="Escolhas" parent="CanvasLayer" instance=ExtResource("3_00vpo")]
 
+[node name="Escolhas2" parent="CanvasLayer" instance=ExtResource("3_00vpo")]
+
 [node name="Mapa" type="Sprite2D" parent="."]
 position = Vector2(800, 392)
 scale = Vector2(1.25, 1.25)
@@ -503,4 +505,5 @@ scale = Vector2(0.75, 0.75)
 [connection signal="pressed" from="CanvasLayer/ColorRect/BoxContainer/Rolar" to="Dado" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="escolherpeça" from="CanvasLayer/Escolhas" to="." method="_on_node_escolherpeça"]
+[connection signal="escolherpeça" from="CanvasLayer/Escolhas2" to="." method="_on_escolhas_2_escolherpeça"]
 [connection signal="dado_rolado" from="Dado" to="." method="_on_dado_dado_rolado"]

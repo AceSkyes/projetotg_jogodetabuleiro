@@ -28,19 +28,20 @@ func _ready() -> void:
 	pass 
 
 func _process(_delta: float) -> void:
-	if contvitp1 == 6:
-		get_tree().change_scene_to_file("res://Cenas/fimdejogo.tscn")
-	if contvitp2 == 6:
+	if contvitp1 == 6 or contvitp2 == 6:
 		get_tree().change_scene_to_file("res://Cenas/fimdejogo.tscn")
 
 
 func _on_dado_dado_rolado(ultimoval: Variant) -> void:
 	print(ultimoval)
 	moval = ultimoval
-	$CanvasLayer/Escolhas.visible = true
+	if contaturno % 2 != 0:
+		$CanvasLayer/Escolhas.visible = true
+	elif contaturno % 2 == 0:
+		$CanvasLayer/Escolhas2.visible = true
 	
 func movimentop1(ultimoval,peça) -> void:
-	ultimoval = 6
+	#ultimoval = 6
 	$CanvasLayer/Escolhas.visible = false
 	var mover = create_tween()
 	while ultimoval != 0:
@@ -95,12 +96,27 @@ func movimentop1(ultimoval,peça) -> void:
 		moverfim.tween_property(peças1[peça], "position", camposfinaisV[contvitp1].position, 0.5)
 		await moverfim.finished
 		contvitp1+=1
+		match peça:
+			0:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha1.disabled = true
+			1:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha2.disabled = true
+			2:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha3.disabled = true
+			3:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha4.disabled = true
+			4:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha5.disabled = true
+			5:
+				$CanvasLayer/Escolhas/Escolhas/MarginContainer/VBoxContainer/Escolha6.disabled = true
+			_:
+				print("deu ruim.")
 	botaorolar.disabled = false
 
 
 func movimentop2(ultimoval,peça) -> void:
-	ultimoval = 6
-	$CanvasLayer/Escolhas.visible = false
+	#ultimoval = 6
+	$CanvasLayer/Escolhas2.visible = false
 	var mover = create_tween()
 	while ultimoval != 0:
 		if movp2[peça] >= minmov:
@@ -152,6 +168,21 @@ func movimentop2(ultimoval,peça) -> void:
 		moverfim.tween_property(peças2[peça], "position", camposfinaisA[contvitp2].position, 0.5)
 		await moverfim.finished
 		contvitp2+=1
+		match peça:
+			0:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha1.disabled = true
+			1:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha2.disabled = true
+			2:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha3.disabled = true
+			3:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha4.disabled = true
+			4:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha5.disabled = true
+			5:
+				$CanvasLayer/Escolhas2/Escolhas/MarginContainer/VBoxContainer/Escolha6.disabled = true
+			_:
+				print("deu ruim 2.")
 	botaorolar.disabled = false
 	
 
@@ -162,7 +193,8 @@ func _on_texture_button_pressed() -> void:
 
 
 func _on_node_escolherpeça(peça: Variant) -> void:
-	if contaturno % 2 != 0:
-		movimentop1(moval,peça)
-	elif contaturno % 2 == 0:
-		movimentop2(moval,peça)
+	movimentop1(moval,peça)
+
+
+func _on_escolhas_2_escolherpeça(peça: Variant) -> void:
+	movimentop2(moval,peça)

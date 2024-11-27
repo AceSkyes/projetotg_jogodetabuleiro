@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://me5m7k1215rd"]
 
 [ext_resource type="Texture2D" uid="uid://8q1shmw764h5" path="res://Recursos/Imagens/seta.png" id="1_ays8u"]
-[ext_resource type="Script" path="res://Cenas/fimdejogo.gd" id="1_tisbx"]
+[ext_resource type="Script" path="res://Scripts/fimdejogo.gd" id="1_tisbx"]
 
 [node name="fimdejogo" type="Control"]
 layout_mode = 3
